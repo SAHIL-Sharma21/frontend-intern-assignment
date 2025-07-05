@@ -23,7 +23,7 @@ export const useChat = () => {
 
     const sendMessage = async(text: string) => {
         const newMessage:Message = {
-            id: Date.now().toString(),
+            id: crypto.randomUUID(),
             sender: "user",
             message: text,
             timeStamp: new Date().toISOString(),
