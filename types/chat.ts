@@ -5,7 +5,7 @@ export interface Message {
     id: string;
     sender : Sender;
     message: string;
-    timeStamp: string;
+    timestamp: string;
     status: Status;
 }
 

@@ -26,7 +26,7 @@ export const useChat = () => {
             id: crypto.randomUUID(),
             sender: "user",
             message: text,
-            timeStamp: new Date().toISOString(),
+            timestamp: new Date().toISOString(),
             status: "sending"
         };
 
@@ -52,10 +52,31 @@ export const useChat = () => {
         }
     }
 
+
+    const retryMessage = async(failedMsg: Message) => {
+        try {
+            const response = await fetch("/api/chat/send", {
+                method: "POST",
+                body: JSON.stringify({messages: failedMsg.message, conversationId})
+            });
+
+            const aiReply = await response.json();
+
+            setMessages(prev => 
+                prev.map(msg => 
+                    msg.id === failedMsg.id ? {...msg, status: 'sent' as const}  : msg
+                ).concat(aiReply)
+            )
+        } catch (err) {
+            console.error("Retry Failed again");
+        }
+    }
+
     return {
         messages,
         isTyping,
-        sendMessage
+        sendMessage,
+        retryMessage,
     }
 
 }
