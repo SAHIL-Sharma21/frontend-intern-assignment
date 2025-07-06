@@ -1,12 +1,10 @@
 import { Message } from "../../../types/chat";
-import { Button } from "../ui/button";
 
-type MessageBubble = {
+type BubbleProps = {
   message: Message;
-  onRetry?: (message: Message) => void;
 };
 
-export const MessageBubble = ({ message, onRetry }: MessageBubble) => {
+export const MessageBubble = ({ message }: BubbleProps) => {
   const isUser = message.sender === "user";
 
   return (
@@ -16,24 +14,14 @@ export const MessageBubble = ({ message, onRetry }: MessageBubble) => {
           isUser
             ? "ml-auto bg-primary text-primary-foreground"
             : "mr-auto bg-muted text-muted-foreground"
-        } `}
+        }`}
       >
         {message.message}
         <div className="mt-1 text-xs text-right opacity-60">
           {new Date(message.timestamp).toLocaleTimeString()}
         </div>
       </div>
-
-      {message.status === "failed" && onRetry && (
-        <Button
-        variant="destructive"
-        size="sm"
-        onClick={() => onRetry(message)}
-        className="ml-auto"
-        >
-          Retry
-        </Button>
-      )}
     </div>
   );
 };
+

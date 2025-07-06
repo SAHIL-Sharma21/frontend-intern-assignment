@@ -12,7 +12,7 @@ export const useChat = () => {
         const loadHistory = async () => {
             const response = await fetch("/api/chat/history")
             const data = await response.json();
-            sendMessage(data.messages);
+            setMessages(data.messages);
             setConversationId(data.conversationId);
         }
 

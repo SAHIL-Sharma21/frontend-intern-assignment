@@ -16,7 +16,7 @@ export async function POST(req: NextRequest){
   const aiResponses: Message = {
     id: crypto.randomUUID(),
     message: aiReplies[Math.random() * aiReplies.length] + `(Replying to: "${message.slice(0, 50)}...")`,
-    timeStamp: new Date().toISOString(),
+    timestamp: new Date().toISOString(),
     sender: "ai",
     status:"sent",
   }

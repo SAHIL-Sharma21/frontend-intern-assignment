@@ -1,10 +1,11 @@
-  import { Button } from "@/components/ui/button";
+import {ChatContainer} from '@/components/chat/ChatContainer';
 
   export default function Home() {
     return (
       <>
-        <h2 className="text-4xl font-bold text-green-600">Ai chat interface application</h2>
-        <Button className="text-2xl">Add to client</Button>
+        <div className="h-full w-full">
+          <ChatContainer />
+        </div>
       </>
     );
   }

@@ -14,10 +14,9 @@ export const MessageInput = ({onSend, isLoading}: MessageData) => {
 
 
     const handleSend = () => {
-        if(!textInput.trim()){
-            onSend(textInput.trim());
-            setTextInput("");
-        }
+        if(!textInput.trim()) return;
+        onSend(textInput.trim());
+        setTextInput("");
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {

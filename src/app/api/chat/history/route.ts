@@ -7,7 +7,7 @@ export async function GET(){
         {
             id: '1',
             message: "Hello, How can i help you today?",
-            timeStamp: new Date(Date.now() - 60000).toISOString(),
+            timestamp: new Date(Date.now() - 60000).toISOString(),
             sender: "ai",
             status: 'sent',
         },

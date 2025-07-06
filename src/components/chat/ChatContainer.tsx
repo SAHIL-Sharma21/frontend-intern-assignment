@@ -1,4 +1,4 @@
-'use clinet'
+'use client'
 
 import { useEffect } from "react"
 import { useChat } from "../../../hooks/useChat"
