@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Message } from "../../../types/chat";
 import { Button } from "../ui/button";
 
@@ -6,8 +7,14 @@ type BubbleProps = {
   onRetry?: (msg: Message) => void;
 };
 
-export const MessageBubble = ({ message, onRetry}: BubbleProps) => {
+export const MessageBubble = ({ message, onRetry }: BubbleProps) => {
   const isUser = message.sender === "user";
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const formattedTime = new Date(message.timestamp).toLocaleTimeString();
+    setTime(formattedTime);
+  }, [message.timestamp]);
 
   return (
     <div className="flex flex-col items-start gap-1">
@@ -20,15 +27,17 @@ export const MessageBubble = ({ message, onRetry}: BubbleProps) => {
       >
         {message.message}
         <div className="mt-1 text-xs text-right opacity-60">
-          {new Date(message.timestamp).toLocaleTimeString()}
+          {time}
         </div>
       </div>
       {message.status === "failed" && (
         <Button
-        variant="destructive"
-        size="sm"
-        onClick={() => onRetry?.(message)}
-        >Retry</Button>
+          variant="destructive"
+          size="sm"
+          onClick={() => onRetry?.(message)}
+        >
+          Retry
+        </Button>
       )}
     </div>
   );
