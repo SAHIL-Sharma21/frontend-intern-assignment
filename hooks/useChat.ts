@@ -72,11 +72,17 @@ export const useChat = () => {
         }
     }
 
+
+    const clearChat = () => {
+        setMessages([]);
+    }
+
     return {
         messages,
         isTyping,
         sendMessage,
         retryMessage,
+        clearChat
     }
 
 }
