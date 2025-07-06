@@ -29,6 +29,7 @@ export const MessageInput = ({onSend, isLoading}: MessageData) => {
     return (
         <div className="flex gap-2 border-t pt-2">
             <Input 
+            aria-label="Type a message"
             value={textInput}
             onChange={(e) => setTextInput(e.target.value)}
             onKeyDown={handleKeyDown}
