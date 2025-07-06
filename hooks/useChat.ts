@@ -36,7 +36,7 @@ export const useChat = () => {
             setIstyping(true);
             const response = await fetch("/api/chat/send", {
                 method: 'POST',
-                body: JSON.stringify({messages: text, conversationId})
+                body: JSON.stringify({message: text, conversationId})
             });
 
             const aiReply = await response.json();
@@ -57,7 +57,7 @@ export const useChat = () => {
         try {
             const response = await fetch("/api/chat/send", {
                 method: "POST",
-                body: JSON.stringify({messages: failedMsg.message, conversationId})
+                body: JSON.stringify({message: failedMsg.message, conversationId})
             });
 
             const aiReply = await response.json();

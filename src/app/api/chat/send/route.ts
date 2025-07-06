@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {Message} from '../../../../types/chat'
+import {Message} from '../../../../../types/chat'
 
 export async function POST(req: NextRequest){
     const {message, conversationId} = await req.json();
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest){
 
   const aiResponses: Message = {
     id: crypto.randomUUID(),
-    message: aiReplies[Math.random() * aiReplies.length] + `(Replying to: "${message.slice(0, 50)}...")`,
+    message: aiReplies[Math.floor(Math.random() * aiReplies.length)] + `(Replying to: "${message.slice(0, 50)}...")`,
     timestamp: new Date().toISOString(),
     sender: "ai",
     status:"sent",
