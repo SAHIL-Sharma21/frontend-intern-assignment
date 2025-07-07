@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import {Message} from '../../../../../types/chat'
 
 export async function POST(req: NextRequest){
-    const {message, conversationId} = await req.json();
+    const {message} = await req.json();
 
     await new Promise((resolve) => setTimeout(resolve, 1000 + Math.random() * 2000))
 
