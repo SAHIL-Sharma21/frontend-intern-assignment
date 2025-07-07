@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Chat Interface 💬
 
-## Getting Started
+A real-time AI-powered chat interface built with Next.js 14+, React, TypeScript, Tailwind CSS, and Shadcn UI.
 
-First, run the development server:
+## 🔗 Live Demo
+[Click here to view the deployed app](https://frontend-intern-assignment-lac.vercel.app/)
 
+---
+
+## 📦 Tech Stack
+
+- **Next.js 14+ (App Router)**
+- **React 18**
+- **TypeScript**
+- **Tailwind CSS + Shadcn/UI**
+- **Vercel** for deployment
+
+---
+
+## 📂 Project Structure
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+frontend--intern--assignment/
+├── public/
+├── src/
+│ ├── app/
+│ ├── components/
+│ ├── hooks/
+│ └── types/
+├── docs/
+│ ├── ARCHITECTURE.md
+│ ├── API.md
+│ └── DEPLOYMENT.md
+├── tailwind.config.ts
+├── tsconfig.json
+├── next.config.js
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+- ✅ Send messages via simulated API
+- ✅ Message status (sending, sent, failed)
+- ✅ Retry failed messages
+- ✅ Clear chat functionality
+- ✅ AI typing indicator
+- ✅ Typewriter streaming effect for AI response
+- ✅ Simulated WebSocket integration
+- ✅ Responsive UI for desktop and mobile
+- ✅ Dark theme enabled by default
+- ✅ Toast notifications with `sonner`
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Setup Instructions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/SAHIL-Sharma21/frontend-intern-assignment.git
+   cd frontend-intern-assignment
 
-## Deploy on Vercel
+2. **Install dependencies:**
+    ```bash
+    npm i
+    ```
+3. **Run the app locally:**
+    ```bash
+    npm run dev
+    ```
+4. **View it in browser:**
+    
+    Open http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---    
+## ✅ Requirements Covered
+ - GitHub repo structured and pushed
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ - Live Vercel demo
+ - README with setup
+ - All core features implemented
+ - Responsive & mobile-tested
+ - No TypeScript errors
+ - Clean, documented code
+
+---
+## 🙌 Author
+**Sahil Sharma**
+
